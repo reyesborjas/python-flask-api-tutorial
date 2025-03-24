@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 from flask import request
 app = Flask(__name__)
 
-# Variable global con la lista de tareas
+
 todos = [
     { "label": "Study python", "done": False }
 ]
@@ -21,7 +21,7 @@ def add_new_todo():
 @app.route('/todos/<int:position>', methods=['DELETE'])
 def delete_todo(position):
     print("This is the position to delete:", position)
-    # Check if position is valid
+   
     if position < 0 or position >= len(todos):
         return jsonify(todos) 
    
